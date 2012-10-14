@@ -1,0 +1,11 @@
+/**
+ * Style sheet vcard
+ */
+/* vCard Download Link */
+a.vcard
+{
+	padding-left:20px;
+	background-image:url("files/vcard/assets/vcard.png");
+	background-position:left center;
+	background-repeat:no-repeat;
+}

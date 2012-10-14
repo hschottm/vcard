@@ -1,0 +1,15 @@
+
+<!-- indexer::stop -->
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php if ($this->headline): ?>
+
+<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+<?php endif; ?>
+
+<div class="vcard"><a class="vcard <?php echo $this->encoding; ?>" href="<?php echo $this->href; ?>" title="<?php echo $this->title; ?>"><?php echo $this->link; ?><?php if (strcmp($this->encoding, 'latin1') == 0): ?> <span class="encoding">(Windows)</span><?php else: ?> <span class="encoding">(Unicode)</span><?php endif; ?></a></div>
+<?php if (strlen($this->href2)): ?>
+<div class="vcard"><a class="vcard <?php echo $this->encoding2; ?>" href="<?php echo $this->href2; ?>" title="<?php echo $this->title; ?>"><?php echo $this->link; ?><?php if (strcmp($this->encoding2, 'latin1') == 0): ?> <span class="encoding">(Windows)</span><?php else: ?> <span class="encoding">(Unicode)</span><?php endif; ?></a></div>
+<?php endif; ?>
+
+</div>
+<!-- indexer::continue -->
