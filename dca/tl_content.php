@@ -8,7 +8,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'vcard_type';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['vcard'] = '{type_legend},type,headline;{vcardtype_legend},vcard_type';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['vcardvhttp'] = '{type_legend},type,headline;{vcardtype_legend},vcard_type,vcard_http;{link_legend},linkTitle,vc_encoding;{protected_legend:hide},protected;{expert_legend},{expert_legend:hide},guests,cssID,space';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['vcardvmember'] = '{type_legend},type,headline;{vcardtype_legend},vcard_type,vcard_member;{link_legend},linkTitle,vc_encoding;{protected_legend:hide},protected;{expert_legend},{expert_legend:hide},guests,cssID,space';
-$GLOBALS['TL_DCA']['tl_content']['palettes']['vcardvcustom'] = '{type_legend},type,headline;{vcardtype_legend},vcard_type;{personal_legend},vc_title,vc_firstname,vc_lastname,vc_birthday,vc_company,vc_jobtitle,vc_department;{communication_legend},vc_mail1,vc_mail2,vc_mail3,vc_web,vc_phone_work,vc_fax_work,vc_phone_mobile,vc_phone_home;{address_work_legend},vc_box_work,vc_street_work,vc_city_work,vc_state_work,vc_postal_work,vc_country_work;{address_home_legend},vc_box_home,vc_street_home,vc_city_home,vc_state_home,vc_postal_home,vc_country_home;{link_legend},linkTitle,vc_encoding;{protected_legend:hide},protected;{expert_legend},{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['vcardvcustom'] = '{type_legend},type,headline;{vcardtype_legend},vcard_type;{personal_legend},vc_title,vc_firstname,vc_lastname,vc_birthday,vc_company,vc_jobtitle,vc_department;{communication_legend},vc_mail1,vc_mail2,vc_mail3,vc_web,vc_phone_work,vc_fax_work,vc_phone_mobile,vc_phone_home;{address_work_legend},vc_box_work,vc_street_work,vc_city_work,vc_state_work,vc_postal_work,vc_country_work;{address_home_legend},vc_box_home,vc_street_home,vc_city_home,vc_state_home,vc_postal_home,vc_country_home;{link_legend},linkTitle,vc_encoding;{image_legend},vc_image;{protected_legend:hide},protected;{expert_legend},{expert_legend:hide},guests,cssID,space';
 
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['vcard_type'] = array
@@ -371,6 +371,15 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['vc_encoding'] = array
 	'options_callback'        => array('tl_content_vcard','getEncodings'),
 	'eval'                    => array('mandatory'=>true, 'tl_class' => 'clr'),
 	'sql'                     => "int(10) unsigned NOT NULL default '1'"
+);
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['vc_image'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['vc_image'],
+	'exclude'                 => true,
+	'inputType'               => 'fileTree',
+	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'mandatory'=>true),
+	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 
 /**

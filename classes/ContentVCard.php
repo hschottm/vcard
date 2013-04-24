@@ -137,7 +137,15 @@ class ContentVCard extends \ContentElement
 		$lastname = (in_array('lastname', $publicfields)) ? $arrMember['lastname'] : "";
 		$vcard->setName($lastname, $firstname);
 		$vcard->setFormattedName($this->getFullname());
-		// TODO: set Photo if avatar is enabled
+		if (strlen($arrMember['avatar'])) 
+		{
+			$f = \FilesModel::findOneById($arrMember['avatar']);
+			if ($f)
+			{
+				$file = new \File($f->path);
+				$vcard->setPhoto($file->getContent(), 'image/' . $f->extension);
+			}
+		}
 		if (in_array('dateOfBirth', $publicfields) && strlen($arrMember['dateOfBirth']))
 		{
 			$day = (int)date("d", $arrMember['dateOfBirth']);
@@ -187,6 +195,15 @@ class ContentVCard extends \ContentElement
 		if (strlen($this->vc_mail2)) $vcard->setEmail($this->vc_mail2);
 		if (strlen($this->vc_mail3)) $vcard->setEmail($this->vc_mail3);
 		if (strlen($this->vc_web)) $vcard->setURL($this->vc_web);
+		if (strlen($this->vc_image)) 
+		{
+			$f = \FilesModel::findOneById($this->vc_image);
+			if ($f)
+			{
+				$file = new \File($f->path);
+				$vcard->setPhoto($file->getContent(), 'image/' . $f->extension);
+			}
+		}
 		if (strlen($this->vc_phone_home)) $vcard->setPhone($this->vc_phone_home, TEL_TYPE_HOME);
 		if (strlen($this->vc_phone_work)) $vcard->setPhone($this->vc_phone_work, TEL_TYPE_WORK);
 		if (strlen($this->vc_fax_work)) $vcard->setPhone($this->vc_fax_work, TEL_TYPE_FAX);

@@ -38,6 +38,7 @@ $GLOBALS['TL_LANG']['tl_content']['vc_mail2']       = array('E-mail address 2', 
 $GLOBALS['TL_LANG']['tl_content']['vc_mail3']       = array('E-mail address 3', 'Please enter a valid e-mail address.');
 $GLOBALS['TL_LANG']['tl_content']['vc_web']     = array('Website', 'Here you can enter a web address.');
 $GLOBALS['TL_LANG']['tl_content']['vc_encoding']     = array('vCard encoding', 'Define the encoding of the vCard. Default should be UTF-8 but some clients (Outlook) require Latin-1.');
+$GLOBALS['TL_LANG']['tl_content']['vc_image']     = array('Photo', 'Select a photo for the vCard.');
 $GLOBALS['TL_LANG']['tl_content']['encoding']['utf-8']     = 'UTF-8 (Unicode) encoding (recommended)';
 $GLOBALS['TL_LANG']['tl_content']['encoding']['latin1']     = 'Latin-1 (Windows) encoding (Microsoft Outlook)';
 $GLOBALS['TL_LANG']['tl_content']['encoding']['both']     = 'Both, UTF-8 and Latin-1 encoding';
@@ -50,5 +51,6 @@ $GLOBALS['TL_LANG']['tl_content']['personal_legend'] = 'Personal data';
 $GLOBALS['TL_LANG']['tl_content']['address_work_legend']  = 'Business address';
 $GLOBALS['TL_LANG']['tl_content']['address_home_legend']  = 'Home address';
 $GLOBALS['TL_LANG']['tl_content']['communication_legend']  = 'Contact details';
+$GLOBALS['TL_LANG']['tl_content']['image_legend']  = 'Photo';
 
 ?>

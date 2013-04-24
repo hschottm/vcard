@@ -84,10 +84,12 @@ $GLOBALS['TL_LANG']['tl_content']['vc_encoding']['1'] = "Legen Sie die Kodierung
 $GLOBALS['TL_LANG']['tl_content']['encoding']['utf-8'] = "UTF-8 Kodierung (empfohlen)";
 $GLOBALS['TL_LANG']['tl_content']['encoding']['latin1'] = "Latin-1 (Windows) Kodierung, z.B. für Microsoft Outlook";
 $GLOBALS['TL_LANG']['tl_content']['encoding']['both'] = "Beide, UTF-8 Kodierung und Latin-1 (Windows) Kodierung";
+$GLOBALS['TL_LANG']['tl_content']['vc_image']     = array('Foto', 'Wählen Sie ein Foto für die Visitenkarte aus.');
 $GLOBALS['TL_LANG']['tl_content']['vcardtype_legend'] = "Visitenkarten-Typ";
 $GLOBALS['TL_LANG']['tl_content']['personal_legend'] = "Personendaten";
 $GLOBALS['TL_LANG']['tl_content']['address_work_legend'] = "Adressdaten (Arbeit)";
 $GLOBALS['TL_LANG']['tl_content']['address_home_legend'] = "Adressdaten (Privat)";
 $GLOBALS['TL_LANG']['tl_content']['communication_legend'] = "Kontaktdaten";
+$GLOBALS['TL_LANG']['tl_content']['image_legend']  = 'Foto';
  
 ?>
