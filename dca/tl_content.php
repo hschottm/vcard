@@ -378,7 +378,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['vc_image'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_content']['vc_image'],
 	'exclude'                 => true,
 	'inputType'               => 'fileTree',
-	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'mandatory'=>true, 'extensions' => 'jpg,jpeg,png'),
+	'eval'                    => array('fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'mandatory'=>false, 'extensions' => 'jpg,jpeg,png'),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
 
