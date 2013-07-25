@@ -178,7 +178,7 @@ class ContentVCard extends \ContentElement
 		if (strlen($company)) $vcard->setOrganization($company);
 		$url = (in_array('website', $publicfields)) ? $arrMember['website'] : "";
 		if (strlen($url)) $vcard->setURL($url);
-		$vcard->setProductId("TYPOlight");
+		$vcard->setProductId("Contao");
 		return $vcard;
 	}
 
@@ -219,7 +219,7 @@ class ContentVCard extends \ContentElement
 		$this->loadLanguageFile('countries');
 		if (strlen($this->vc_box_work . $this->vc_street_work . $this->vc_city_work . $this->vc_state_work . $this->vc_postal_work . $this->vc_country_work)) $vcard->setAddress($this->vc_box_work, "", $this->vc_street_work, $this->vc_city_work, $this->vc_state_work, $this->vc_postal_work, $GLOBALS['TL_LANG']['CNT'][$this->vc_country_work], ADR_TYPE_WORK);
 		if (strlen($this->vc_box_home . $this->vc_street_home . $this->vc_city_home . $this->vc_state_home . $this->vc_postal_home . $this->vc_country_home)) $vcard->setAddress($this->vc_box_home, "", $this->vc_street_home, $this->vc_city_home, $this->vc_state_home, $this->vc_postal_home, $GLOBALS['TL_LANG']['CNT'][$this->vc_country_home], ADR_TYPE_DOM);
-		$vcard->setProductId("TYPOlight");
+		$vcard->setProductId("Contao");
 		return $vcard;
 	}
 	
@@ -256,7 +256,7 @@ class ContentVCard extends \ContentElement
 		$src = $this->Environment->request;
 		$this->Template->link = specialchars($link);
 		$encoding = ($this->vc_encoding == 2) ? 'latin1' : 'utf8';
-		$this->Template->endcoding = $encoding;
+		$this->Template->encoding = $encoding;
 		if (strcmp($this->vcard_type, 'vcustom') == 0)
 		{
 			$this->Template->href = $this->addToUrl("vcard=" . $this->id . "&amp;encoding=" . $encoding);
