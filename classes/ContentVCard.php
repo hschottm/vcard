@@ -116,19 +116,9 @@ class ContentVCard extends \ContentElement
 	protected function sendContent($content, $mimetype, $filename)
 	{
 		$encoding = (strcmp($this->Input->get('encoding'), 'latin1') == 0) ? 'ISO-8859-1' : 'UTF-8';
-		if (strcmp($encoding, 'ISO-8859-1') == 0) 
-		{
-			$content = utf8_decode($content);
-			$content_length = strlen($content);
-		}
-		else
-		{
-			$content_length = mb_strlen($content);
-		}
 		header('Content-Type: ' . $mimetype . ";charset=" . $encoding);
 		header('Content-Transfer-Encoding: binary');
 		header('Content-Disposition: attachment; filename="'. $filename .'.vcf"');
-		header('Content-Length: '.$content_length);
 		header('Cache-Control: must-revalidate, post-check=0, pre-check=0'); 
 		header('Pragma: public');
 		header('Expires: 0');
